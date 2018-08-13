@@ -1,0 +1,42 @@
+ 
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Hotel Home</ion-title>
+  </ion-navbar>
+
+</ion-header> 
+
+<ion-content paddingclass="cards-bg social-cards">  
+      <ion-card class="imagePosition">
+            <img src="http://insideout.org.in/{{hotelData.dish_photo}}" /> 
+        </ion-card> 
+                               
+              <ion-card class="hotel-content">
+                  <ion-item class="hotelInitialText"><h1>{{ hotelData.resto_name[0] | uppercase}}</h1></ion-item>
+                  <ion-item> 
+                    <ul>
+                      <li (click)="navigateToHotelDetail()"><h2><strong>Hotel</strong> : {{hotelData.resto_name}}
+                        <strong class="viewProfileTxt">VIEW MENU</strong></h2> 
+                      </li><hr>
+                      <li><h2><strong>Hotel Type</strong> :</h2> <p>{{hotelData.dish_type}} </p></li><hr>
+                      <li><h2><strong>Favorite Dish</strong> :</h2> <p>{{hotelData.fav_dish}} </p></li><hr>
+                      <li><h2><strong>description</strong> :</h2> <p>{{hotelData.description}} </p></li><hr>
+                      <li><h2><strong>Address</strong> :</h2> <p>{{hotelData.resto_address}}, {{hotelData.city}}, {{hotelData.state}} </p></li><hr>
+                      <li><h2><strong>Time</strong> :</h2> <p>{{hotelData.open_time}} - {{hotelData.close_time}}  </p></li><hr>
+                      <li><h2><strong>Services</strong> :</h2> <p>{{hotelData.services}} </p></li><hr>
+                      <li><h2><strong>Owner Name</strong> :</h2> <p>{{hotelData.owner_name}} </p></li><hr>
+                      <li><h2><strong>Resto Contact</strong> :</h2> <p>{{hotelData.resto_contact}} </p></li><hr>
+                      <li><h2><strong>Resto Email</strong> :</h2> <p>{{hotelData.resto_email}} </p></li><hr>
+                      <li><h2><strong>Web URL</strong> :</h2> <p>{{hotelData.web_url}} </p></li><hr>
+                     </ul>
+                  </ion-item> 
+              </ion-card>  
+        
+  </ion-content>
+<!-- 
+  <ion-footer>
+      <ion-toolbar>
+        <button ion-button full color="secondary" (click)="navigateToBill()">Pay Bill</button>
+      </ion-toolbar>
+    </ion-footer> -->

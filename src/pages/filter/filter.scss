@@ -1,0 +1,78 @@
+page-filter {
+
+    .navHeight{
+        min-height: 0;
+    }
+    .footerToolBar{
+        min-height: 45px;
+    }
+    // .toolbar-background-md{
+    //     background-color: orange;
+    // }
+
+    .btnApplyFilter{
+        height: 43px;
+        width: 100%;
+        text-align: center;
+        background-color: orange;
+    }
+
+    .clrfiltertxt{
+        color: orange;
+    }
+ 
+    .imageSize{
+        height: 70px;
+        width: 70px;
+    }
+    .filterColor{
+        color: orange;
+    }
+    .discoverlbl{
+        color: orange;
+        margin-top: 0;
+    }
+    .ionRange{
+        margin-top: -13% !important;
+    }
+    .valueColor{
+        color:black;
+    } 
+    .selectedValStyle{
+        padding-right: 3px;
+        margin-top: -10px;
+    }
+    .rmvSelectedValbtn{
+        border-radius: 10px;
+    }
+    .applybtn{
+        color: orange;
+    }
+    .applyFooter{
+        text-align: center;
+    }
+    $colors: (
+        primary:    #387ef5,
+        secondary:  #32db64,
+        danger:     #f53d3d,
+        light:      #f4f4f4,
+        dark:       #222,
+        customColor:#FF8C00
+        
+        );
+    .fliterToolbar{
+        cursor: pointer;
+    }
+    .filterIcons{
+        cursor: pointer;
+        border-radius: 100% !important;
+        height: 40px !important;
+    }
+    .tab.tabbar{
+        z-index: 0;
+    }
+    .fab-md{
+        display: none;
+    }
+
+}

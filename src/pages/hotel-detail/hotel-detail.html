@@ -1,0 +1,60 @@
+<ion-header>
+        
+          <ion-navbar>
+            <ion-title>Hotel Menu</ion-title>
+          </ion-navbar>
+        
+        </ion-header>
+        
+<ion-content paddingclass="cards-bg social-cards">
+    <ion-card class="htldetailImg">
+        <img src="assets/imgs/d1.jpg" /> 
+    </ion-card>    
+                
+    <ion-card class="htlDetailContent">
+        
+        <ion-item class="hotelInitialText-datailPage"><h1>R</h1></ion-item>
+        
+        <ion-item> 
+                
+            <ion-list>
+                <!-- First Level -->
+                <ion-list *ngFor="let item of information; let i = index">
+                    <!-- Toggle Button -->
+                    <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
+                        <ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright" *ngIf="!item.open" class="iconsize"></ion-icon>
+                        <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown" *ngIf="item.open" class="iconsize"></ion-icon>
+                            {{ item.name }}
+                    </button><hr>
+                
+                    <ion-list *ngIf="item.children && item.open">
+                        <!-- Second Level -->
+                        <ion-list *ngFor="let child of item.children; let j = index">
+                            <!-- Toggle Button -->
+                            <button ion-item (click)="toggleItem(i, j)" *ngIf="child.children">
+                            <ion-icon item-left name="add" *ngIf="!child.open" class="iconsize"></ion-icon>
+                            <ion-icon item-left name="close" *ngIf="child.open" class="iconsize"></ion-icon>
+                            {{ child.name }}
+                            </button>
+                    
+                            <!-- Direct Add Button as Fallback -->
+                            <ion-item *ngIf="!child.children" ion-item detail-none class="subMenuStyle"> 
+                            <h2>{{ child.name }}</h2> <hr>
+                            <button ion-button outline item-end>{{ child.price }}</button>  
+                            </ion-item>
+                    
+                            <!-- <ion-list *ngIf="child.children && child.open"> 
+                            <ion-item *ngFor="let item of child.children; let k = index" detail-none class="child-item" text-wrap>
+                                <h2>{{ item.name }}</h2> 
+                                <button ion-button outline item-end>{{ item.price }}</button>
+                            </ion-item>
+                            </ion-list> -->
+                    
+                        </ion-list>
+                    </ion-list> 
+                </ion-list>
+            </ion-list>   
+        </ion-item> 
+    </ion-card>  
+
+</ion-content>

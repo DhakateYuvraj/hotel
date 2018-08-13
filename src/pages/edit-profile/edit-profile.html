@@ -1,0 +1,33 @@
+
+<ion-header>
+  
+    <ion-navbar class="navHeight">
+      <ion-title>Edit Profile</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding> 
+      <img src="{{profileImage}}" (click)="accessGallery()" class="imageStyle"> 
+      <ion-list>
+      <ion-item>
+          <ion-label color="primary" floating>Name</ion-label>
+          <ion-input type="text" [(ngModel)]="user.name" name="name" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" floating>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="user.email" name="email"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label color="primary" floating>Contact Number</ion-label>
+              <ion-input type="number" [(ngModel)]="user.contactNum" name="contactNum"></ion-input>
+          </ion-item>
+          </ion-list>
+          
+  </ion-content>
+  
+  <ion-footer (click)="updateProfile()" >
+      <button class="updateButton">Update Profile</button>
+  </ion-footer> 
+  

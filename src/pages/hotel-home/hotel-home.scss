@@ -1,0 +1,24 @@
+page-hotel-home {
+
+    .imagePosition{
+        position: fixed;
+    }
+    .hotelInitialText{
+        background-color: lightgrey;
+        z-index: 1;
+        margin-bottom: -6%;
+        margin-left: 7%;
+        height: 50px;
+        width: 16%;
+        border-radius: 100%;
+    }
+    .hotel-content{ 
+        margin-top: 60% !important;
+        overflow-y: hidden !important;
+      }
+    .viewProfileTxt{
+        float:right;
+        color:blue;
+    }  
+  
+}

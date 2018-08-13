@@ -1,0 +1,38 @@
+<ion-header> 
+  <!-- <ion-navbar class="navHeight" hideBackButton>
+    <ion-row> 
+        <ion-title>   <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back" (click)="goBack()"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; Profile</ion-title> 
+    </ion-row> 
+  </ion-navbar>  -->
+  <ion-navbar class="navHeight" >
+    <ion-row>
+      <ion-title>
+        Profile
+      </ion-title>
+    </ion-row>
+  </ion-navbar>
+</ion-header> 
+
+<ion-content>
+  <ion-card class="cardStyle">
+    <a (click)="navigateToEditProfile()">
+    <img src="{{profileImage}}" class="imageStyle"> 
+    <ion-icon ios="ios-create" md="md-create" class="editIconStyle"></ion-icon></a>
+    <hr>
+          <ion-card-header>
+              <ion-item  class="contentStyle"> 
+                  <h1>{{loginUserData.name}}</h1><hr>
+                  <h3>Verified with</h3><br>
+                  <ion-icon ios="logo-google" md="logo-google" class="googleIcon"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <ion-icon ios="logo-facebook" md="logo-facebook" class="facebookIcon"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <ion-icon ios="ios-call" md="md-call" class="phoneIcon"></ion-icon>
+                  <ion-icon ios="ios-mail" md="ios-mail-outline" class="emailIcon"></ion-icon><br><br>
+                  <!-- <img src="assets/imgs/facebook-log.png">  -->
+                  <button class="facebooButton">LINK YOUR FACEBOOK</button><br><br>
+                  <h4 class="textStyle" (click)="navigateToAccount()">ACCOUNTA AND PAYMENTS</h4><hr>
+                  <h4 class="textStyle" (click)="navigateToFeedback()">FEEDBACK AND HELP</h4>
+                  
+                </ion-item> 
+          </ion-card-header>   
+      </ion-card> 
+</ion-content>

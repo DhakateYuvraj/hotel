@@ -1,0 +1,135 @@
+<!-- <ion-header> 
+  <ion-navbar>
+    <ion-row>
+        <ion-title>Hotel</ion-title>
+        <ion-title (click)="logout()" ><span class="logoutTitle">Logout</span></ion-title>
+    </ion-row> 
+  </ion-navbar> 
+</ion-header>  -->
+
+<ion-header #head >
+    <ion-navbar class="homeHeader" hideBackButton>
+        <ion-row>
+            <ion-col col-8>
+                <ion-label (click)="nextPage();" class="dropdownbtn">
+                    <span class="dropdownText" *ngIf="showSelectBtn" >{{getSelctedLoction() ? getSelctedLoction() : currentLocation }} &nbsp;</span>
+                    <span class="dropdownText" class="selectlablsyle" *ngIf="showSelectedAddrs">All Categories &nbsp;</span>
+                    <ion-icon name="ios-arrow-down-outline"></ion-icon>
+                </ion-label>
+            </ion-col>   
+            <ion-col col-2> 
+                <ion-label class="searchIcon" (click)="search();" ><ion-icon ios="ios-search" md="md-search"></ion-icon></ion-label>
+            </ion-col>   
+            <ion-col col-1> 
+                <ion-label (click)="filterPage();" class="dropdownbtn filterlablstyle"><ion-icon ios="ios-options-outline" md="md-options"></ion-icon></ion-label>
+            </ion-col>
+            <ion-col col-1 (click)="openPopover($event);">  
+                <ion-label class="dropdownbtn filterlablstyle"><ion-icon ios="ios-more" md="md-more"></ion-icon></ion-label>
+            </ion-col>
+        </ion-row> 
+    </ion-navbar>
+    <ion-row class="rowheight">
+          <ion-col col-12>
+              <ion-slides>
+                  <ion-slide >
+                  <ion-row> 
+						<ion-col col-3 *ngFor="let category of categoriesData"> 
+							<img src="http://insideout.org.in/{{category.cat_img}}" class="imageSize" (click)="navigateToAllList(category.cat_id)" />  
+							<ion-label class="fontStyle">{{category.cat_name}}</ion-label>  
+						</ion-col>
+					</ion-row>
+                    </ion-slide>
+                  
+                    <ion-slide>
+                        <ion-row>
+  
+                              <ion-col col-3>
+                              <img src="assets/icon/6.png" class="imageSize" (click)="navigateToAllList()">  
+                              <ion-label class="fontStyle">Cocktail</ion-label> 
+                              </ion-col>
+          
+                              <ion-col col-3>
+                              <img src="assets/icon/7.png" class="imageSize" (click)="navigateToAllList()">  
+                              <ion-label class="fontStyle">Chinese</ion-label> 
+                              </ion-col>
+  
+                              <ion-col col-3>
+                                 <img src="assets/icon/8.png" class="imageSize" (click)="navigateToAllList()">  
+                                 <ion-label class="fontStyle">Ice-Cream</ion-label> 
+                              </ion-col>
+                              <ion-col col-3 >
+                                 <img src="assets/icon/9.png" class="imageSize" (click)="navigateToAllList()"> 
+                                 <ion-label class="fontStyle">Cake </ion-label> 
+                              </ion-col>
+      
+                        </ion-row>
+                    </ion-slide>
+                  
+                  
+                  </ion-slides>
+          </ion-col>
+        </ion-row>
+  </ion-header> 
+
+
+<ion-content paddingclass="cards-bg social-cards" hide-header [header]="head" #contentRef (ionScroll)="scrollingFun($event)">
+    
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content  
+            refreshingSpinner="crescent"
+            refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-list>
+        <ion-row>
+            <ion-col col-6 *ngFor="let data of hotelData"> 
+                <ion-card (click)= "navigateToHotel(data.resto_id)" class="colStyle">
+                    <img src="http://insideout.org.in/{{data.dish_photo}}" /> 
+                    <ion-item> 
+                        <h2>Hotel {{data.resto_name}}</h2>
+                        <p>Address {{data.resto_address}}</p>
+                    </ion-item>
+                </ion-card>  
+            </ion-col>
+        </ion-row> 
+    </ion-list>
+    <ion-list>
+        <ion-row>
+            <ion-col col-6 *ngFor="let data of displayData"> 
+                <ion-card (click)= "navigateToHotel(data.resto_id)" class="colStyle">
+                    <img src="assets/imgs/d1.jpg" /> 
+                    <ion-item> 
+                        <h2>Hotel {{data.resto_name}}</h2>
+                        <p>Address {{data.resto_address}}</p>
+                    </ion-item>
+                </ion-card>  
+            </ion-col>
+        </ion-row> 
+    </ion-list>      
+      
+  </ion-content>
+
+
+  <!-- <ion-footer #foot>
+        <ion-toolbar>
+            <ion-row>
+                <ion-col col-4 style="text-align:center">
+                        <button ion-button icon-only>
+                                <ion-icon name="home"></ion-icon>
+                              </button>
+                </ion-col>
+                <ion-col col-4 style="text-align:center">
+                        <ion-fab bottom center>
+                                <button ion-fab (click)="navigateToMap()"> <ion-icon ios="ios-navigate" md="ios-navigate-outline" style="font-size: 40px;"></ion-icon></button>
+                              </ion-fab>
+                </ion-col>
+                <ion-col col-4 style="text-align:center">
+                        <button ion-button icon-only>
+                                <ion-icon name="home"></ion-icon>
+                              </button>
+                </ion-col>
+            </ion-row>
+              
+        </ion-toolbar>
+      </ion-footer> -->

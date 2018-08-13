@@ -1,0 +1,39 @@
+ 
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>Mess Home</ion-title>
+      </ion-navbar>
+    
+    </ion-header> 
+    
+    <ion-content paddingclass="cards-bg social-cards">  
+        
+          <ion-card class="imagePosition">
+                <img src="assets/imgs/d1.jpg"> 
+            </ion-card> 
+                                   
+                  <ion-card class="hotel-content">
+                      <ion-item class="hotelInitialText"><h1>{{ hotelNameInitial | uppercase}}</h1></ion-item>
+                      <ion-item> 
+                        <ul>
+                          <li><h2><strong>Mess</strong> : {{hotelName}}
+                            <strong class="viewProfileTxt" (click)="navigateToHotelDetail()">VIEW MENU</strong></h2> 
+                          </li><hr>
+                          <li><h2><strong>Category</strong> : {{hotelCategory}}</h2></li><hr>
+                          <li><h2><strong>Rating </strong> : {{hotelRating}}</h2></li><hr>
+                          <li><h2><strong>Address</strong> : {{hotelAddress}}</h2></li><hr>
+                          <li><h2><strong>Facility</strong> : {{hotelFacility}}</h2></li><hr>
+                          <li><h2><strong>Hotel or Mess </strong> : {{hotel_or_mess}}</h2></li><hr>
+                          <li><h2><strong>Hotel</strong> : {{hotelName}}</h2></li><hr>
+                          <li><h2><strong>Category</strong> : {{hotelCategory}}</h2></li><hr>
+                          <li><h2><strong>Rating </strong> : {{hotelRating}}</h2></li><hr>
+                          <li><h2><strong>Address</strong> : {{hotelAddress}}</h2></li><hr>
+                          <li><h2><strong>Facility</strong> : {{hotelFacility}}</h2></li><hr>
+                          <li><h2><strong>Hotel or Mess </strong> : {{hotel_or_mess}}</h2></li><hr> 
+                         </ul>
+                      </ion-item> 
+                  </ion-card>  
+            
+      </ion-content>
+    

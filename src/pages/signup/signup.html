@@ -1,0 +1,29 @@
+<ion-content padding> 
+	<span *ngIf="showError" class="errorText">Failed to Register. Try Again.</span>
+	<form [formGroup]="registrationForm" (ngSubmit)="regForm()">
+		<ion-item>
+			<ion-label>Username</ion-label>
+			<ion-input type="text" formControlName="username"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Email id</ion-label>
+			<ion-input type="text" formControlName="email"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Mobile Number</ion-label>
+			<ion-input type="text" formControlName="mobile"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Password</ion-label>
+			<ion-input type="password" formControlName="password"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Retype Password</ion-label>
+			<ion-input type="password" formControlName="repassword"></ion-input>
+		</ion-item>
+		<button ion-button block type="submit" [disabled]="!registrationForm.valid"> Create Account </button>
+		<p></p>
+		<button ion-button block type="button" color="light" (click)="cancelRegistration()" >Cancel</button>  
+	</form>
+</ion-content>
+

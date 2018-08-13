@@ -1,0 +1,76 @@
+page-hotel {
+
+    .logoutTitle{
+        padding-left: 30%;
+        font-size: medium;
+    }
+
+    .colStyle{
+        width: 100%; 
+        margin:0;
+    }
+    .navBarHeight{
+        height: 0;
+    }
+    .selectlablsyle{
+        display: inline-flex;
+    }
+
+    .searchIcon{
+        // float: right; 
+    }
+
+    .filterlablstyle{
+        float: right; 
+    }
+
+    // Search Bar
+
+    input[type=text] {
+        width:10px;
+        box-sizing: border-box;
+        border: 1px solid #30d05f;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('assets/imgs/search.png');
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        float: right;
+    }
+    
+    input[type=text]:focus {
+        width: 100%;
+    }
+    // End Search Bar
+    .imageSize{
+        height: 35px !important;
+        width: 35px !important;
+        border-radius: 100%;
+    }
+    .fontStyle{
+        font-size: 12px;
+        margin-top: 1%;
+    }
+    .dropdownbtn{
+        border-color: white !important;
+        color: black;
+    }
+    .dropdownText{
+    font-family: sans-serif
+    }
+    .rowheight{
+        margin-bottom: -5%;
+    }
+    .imagePosition{
+        position: fixed;
+    }
+    .toolbar-background-md {
+        border-color: #b2b2b2;
+        background: white !important;
+        height:10px
+    }
+}

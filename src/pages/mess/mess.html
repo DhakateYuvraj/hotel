@@ -1,0 +1,112 @@
+<!-- <ion-header> 
+  <ion-navbar>
+    <ion-row>
+        <ion-title>Hotel</ion-title>
+        <ion-title (click)="logout()" ><span class="logoutTitle">Logout</span></ion-title>
+    </ion-row> 
+  </ion-navbar> 
+</ion-header>  -->
+
+<ion-header>
+        <ion-navbar class="navBarHeight">
+                <ion-row>
+                    <ion-col col-8>
+                        <ion-label (click)="nextPage();" class="dropdownbtn">
+                            <span class="dropdownText" >{{getSelctedLoction() ? getSelctedLoction() : "SELECT" }} &nbsp;</span> 
+                            <ion-icon name="ios-arrow-down-outline"></ion-icon>
+                        </ion-label>
+                    </ion-col>  
+        
+                    <ion-col col-2> 
+                        <ion-label class="searchIcon" (click)="search();" ><ion-icon ios="ios-search" md="md-search"></ion-icon></ion-label>
+                    </ion-col>                  
+                          
+                    <ion-col col-1> 
+                        <ion-label (click)="filterPage();" class="dropdownbtn filterlablstyle"><ion-icon ios="ios-options-outline" md="md-options"></ion-icon></ion-label>
+                    </ion-col>
+                    <ion-col col-1> 
+                            <ion-label (click)="filterPage();" class="dropdownbtn filterlablstyle"><ion-icon ios="ios-more" md="md-more"></ion-icon></ion-label>
+                        </ion-col>
+                </ion-row> 
+            </ion-navbar>
+    <ion-row class="rowheight">
+          <ion-col col-12>
+              <ion-slides>
+                  <ion-slide >
+                  <ion-row> 
+                     <ion-col col-3>
+                        <img src="assets/icon/1.png" class="imageSize" (click)="navigateToAllList()"> 
+                        <ion-label class="fontStyle">Restaurants</ion-label> 
+                     </ion-col>
+      
+                     <ion-col col-3>
+                        <img src="assets/icon/2.png" class="imageSize" (click)="navigateToAllList()">  
+                        <ion-label class="fontStyle">Fish</ion-label> 
+                     </ion-col>
+                         
+      
+                     <ion-col col-3>
+                        <img src="assets/icon/3.png" class="imageSize" (click)="navigateToAllList()">  
+                        <ion-label class="fontStyle">Meat</ion-label> 
+                     </ion-col>
+  
+                     <ion-col col-3>
+                        <img src="assets/icon/4.png" class="imageSize" (click)="navigateToAllList()">  
+                        <ion-label class="fontStyle">Wines</ion-label> 
+                     </ion-col>
+               
+                         
+                        </ion-row>
+                        
+                    </ion-slide>
+                  
+                    <ion-slide>
+                        <ion-row>
+  
+                              <ion-col col-3>
+                              <img src="assets/icon/6.png" class="imageSize" (click)="navigateToAllList()">  
+                              <ion-label class="fontStyle">Cocktail</ion-label> 
+                              </ion-col>
+          
+                              <ion-col col-3>
+                              <img src="assets/icon/7.png" class="imageSize" (click)="navigateToAllList()">  
+                              <ion-label class="fontStyle">Chinese</ion-label> 
+                              </ion-col>
+  
+                              <ion-col col-3>
+                                 <img src="assets/icon/8.png" class="imageSize" (click)="navigateToAllList()">  
+                                 <ion-label class="fontStyle">Ice-Cream</ion-label> 
+                              </ion-col>
+                              <ion-col col-3>
+                                 <img src="assets/icon/9.png" class="imageSize" (click)="navigateToAllList()"> 
+                                 <ion-label class="fontStyle">Cake </ion-label> 
+                              </ion-col>
+      
+                        </ion-row>
+                    </ion-slide>
+                  
+                  
+                  </ion-slides>
+          </ion-col>
+        </ion-row>
+  </ion-header>
+
+<ion-content paddingclass="cards-bg social-cards">  
+    
+      
+          <ion-item >
+  
+          <ion-row>
+              <ion-col col-6 *ngFor="let data of displayData">
+                    <ion-card (click)= "navigateToHotel(data.resto_id)">
+                  <img src="assets/imgs/d1.jpg"> 
+                  <ion-item> 
+                    <h2>Hotel {{data.resto_name}}</h2>
+                    <p>Address {{data.resto_address}}</p>
+                </ion-item>
+            </ion-card>      
+              </ion-col>
+          </ion-row> 
+          </ion-item>
+      
+  </ion-content>

@@ -1,0 +1,21 @@
+ 
+<ion-header> 
+  <ion-navbar>  
+
+  <ion-searchbar [showCancelButton]="true" (ionCancel)="cancelSearch()" 
+      [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="filterItems()"
+      placeholder="I'm looking for..." class="searchbarStyle">
+  </ion-searchbar>
+
+  </ion-navbar>  
+</ion-header>
+
+<ion-content class="contentStyle" (click)="cancelSearch()">  
+
+    <ion-list>
+      <ion-item *ngFor="let item of filteredItems">  
+        <ion-label (click)="navigateToDetail(item.resto_id)"> {{ item.resto_name }} </ion-label>  
+      </ion-item>
+    </ion-list>
+</ion-content>
+

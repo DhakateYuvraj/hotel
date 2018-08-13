@@ -1,0 +1,23 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Category Details</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content paddingclass="cards-bg social-cards">
+	<ion-card *ngFor="let data of categoryData ">
+		<ion-item (click)= "navigateToHotel(data.hotel_id)">  
+			<ion-row>
+				<ion-col col-4>
+					<img src="http://insideout.org.in/{{data.image_path}}"> 
+				</ion-col>
+				<ion-col col-8>               
+					<ion-item> 
+						<h2>Hotel </h2><p>{{data.resto_name}}<p>
+						<h2>Food Name </h2><p>{{data.food_name}}</p>
+						<h2>Address </h2><p>{{data.description}}</p>
+					</ion-item>    
+				</ion-col>
+			</ion-row>
+		</ion-item>
+	</ion-card> 
+</ion-content>

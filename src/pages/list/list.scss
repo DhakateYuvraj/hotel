@@ -1,0 +1,25 @@
+page-list {
+
+    .imageSize{
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+    }
+    .liststyles{
+        cursor: pointer;
+    }
+    .iconsStyle{
+        // float: right;
+        padding-top: 15px;
+    }
+    .iconsStylelocation{
+        float: right;
+        color: skyblue;
+    }
+    .searchbarStyle{
+        width: 110%;
+        margin-top: -15px;
+        margin-left: -14px
+    }
+
+}

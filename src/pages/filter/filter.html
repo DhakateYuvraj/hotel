@@ -1,0 +1,130 @@
+<ion-header>
+  <ion-navbar class="navHeight">
+    <ion-row>
+      <ion-col col-8>
+        <ion-title>Filters</ion-title>
+      </ion-col>
+      <ion-col col-4> <span class="clrfiltertxt" (click)="showAlert()">Clear Filter </span> 
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-label class="discoverlbl" *ngIf="rangeValue == 0">
+      <ion-icon ios="ios-eye" md="md-eye" style="color:black"></ion-icon>
+        Discover hotels near you (in kms)
+  </ion-label>
+  <ion-label class="discoverlbl" *ngIf="rangeValue != 0">
+      <ion-icon ios="ios-eye" md="md-eye" style="color:black"></ion-icon>
+        Discover hotels within &nbsp;<span class="valueColor">{{rangeValue}}</span>&nbsp; kms
+  </ion-label>
+  <ion-range class="ionRange" min="0" max="100" pin="true" [(ngModel)] = "rangeValue" name="rangeValue" (ionChange)="getRangeValue()">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>100</ion-label> 
+  </ion-range><hr>
+
+  <ion-row>
+    <ion-col col-12>
+      <ion-icon ios="ios-pricetag" md="md-pricetag">&nbsp;&nbsp;</ion-icon>
+      <span class="filterColor">Choose Category</span>
+    </ion-col>
+  </ion-row><br>
+  <ion-row> 
+    <p *ngFor="let value of selectedValue" class="selectedValStyle">
+      <button outline class="rmvSelectedValbtn" (click)="removeSelectedValue(value)" >{{value}}
+        <ion-icon ios="ios-close" md="ios-close-outline"></ion-icon>
+      </button> 
+    </p> 
+  </ion-row>
+ 
+
+  <ion-row>
+    <ion-col col-3>
+      <img src="assets/icon/1.png"  class="filterIcons" (click)="select('restaurants')"><br>  Resto  
+    </ion-col>
+    <ion-col col-3>
+      <img src="assets/icon/2.png"  class="filterIcons" (click)="select('Fish')"><br> Fish
+    </ion-col>
+
+    <ion-col col-3>
+      <img src="assets/icon/3.png"  class="filterIcons" (click)="select('Meat')"><br> Meat
+    </ion-col>
+    <ion-col col-3>
+      <img src="assets/icon/4.png"  class="filterIcons" (click)="select('Wines')"><br> Wines
+    </ion-col>
+  </ion-row>
+  <ion-row> 
+
+    <ion-col col-3>
+      <img src="assets/icon/6.png"  class="filterIcons " (click)="select('Cocktail')"><br> Cocktail
+    </ion-col>
+    <ion-col col-3>
+      <img src="assets/icon/7.png" class="filterIcons " (click)="select('Chinese')"><br> Chinese
+    </ion-col>
+    <ion-col col-3>
+      <img src="assets/icon/8.png"  class="filterIcons " (click)="select('Cake')"><br> Cake
+    </ion-col>
+    <ion-col col-3>
+      <img src="assets/icon/9.png"  class="filterIcons " (click)="select('Ice-Cream')"><br> Ice-Cream
+    </ion-col>
+  </ion-row>
+  <ion-row>
+
+
+    <ion-col col-3>
+      <img src="assets/icon/10.png"  class="filterIcons " (click)="select('Tea')"><br> Tea
+    </ion-col>
+
+
+  </ion-row>
+  <ion-row>
+    <ion-col col-12>
+
+      <ion-item>
+        <i class="fa fa-rupee"></i>
+        <span class="filterColor"> Set a Price Range</span>
+      </ion-item>
+
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-label padding>Price (
+      <i class="fa fa-rupee"></i>)</ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>  
+      <ion-row>
+        <ion-col col-11>
+          <ion-item>
+            <ion-input type="number" placeholder="from" [(ngModel)]="priceFrom"></ion-input>
+          </ion-item> 
+        </ion-col>
+        <ion-col col-1>
+            <p>|</p>
+        </ion-col>
+      </ion-row> 
+      
+    </ion-col>
+    <ion-col col-6>
+
+      <ion-item>
+
+        <ion-input type="number" placeholder="to" [(ngModel)]="priceTo"></ion-input>
+      </ion-item>
+
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+
+<ion-footer >
+  <button (click)="applyFilter()" class="btnApplyFilter">APPLY FILTER</button>
+  <!-- <ion-toolbar color="customColor" class="footerToolBar" (click)="applyFilter()">
+    <ion-title class="applyFooter">APPLY FILTER</ion-title>
+  </ion-toolbar> -->
+</ion-footer>  
+ 
+
+

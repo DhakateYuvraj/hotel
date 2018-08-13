@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{getLocation}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-searchbar [(ngModel)]="autocomplete.query" [showCancelButton]="false" (ionInput)="updateSearch()" 
+    placeholder="Search location ..." class="searchbarStyle">
+  </ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of autocompleteItems" >
+      <ion-label (click)="chooseItem(item)"> 
+        {{ item.description }}
+      </ion-label> 
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <ion-label>{{currentLocation}}
+      <ion-icon ios="ios-locate" md="md-locate" class="iconsStylelocation"></ion-icon>
+    </ion-label>
+  </ion-item>
+
+  <hr>   
+        <ion-row class="liststyles" (click)="navigateToAllList()">  
+                <ion-col col-3>
+                  <img src="assets/icon/1.png" class="imageSize">
+                </ion-col>
+                <ion-col col-7>
+                  <ion-label>Restaurants</ion-label>                 
+                </ion-col>
+                <ion-col col-2>
+                  <ion-icon ios="ios-ionic" md="ios-ionic-outline" class="iconsStyle"></ion-icon>
+                </ion-col> 
+        </ion-row>
+        <ion-row class="liststyles" (click)="navigateToAllList()">  
+            <ion-col col-3>
+              <img src="assets/icon/2.png" class="imageSize">
+            </ion-col>
+            <ion-col col-7>
+              <ion-label>Fish</ion-label>                 
+            </ion-col>
+            <ion-col col-2>
+              <ion-icon ios="ios-ionic" md="ios-ionic-outline" class="iconsStyle"></ion-icon>
+            </ion-col> 
+        </ion-row>
+        <ion-row class="liststyles" (click)="navigateToAllList()">  
+            <ion-col col-3>
+              <img src="assets/icon/3.png" class="imageSize">
+            </ion-col>
+            <ion-col col-7>
+              <ion-label>Meat</ion-label>                 
+            </ion-col>
+            <ion-col col-2>
+              <ion-icon ios="ios-ionic" md="ios-ionic-outline" class="iconsStyle"></ion-icon>
+            </ion-col> 
+        </ion-row>
+        <ion-row class="liststyles" (click)="navigateToAllList()">  
+            <ion-col col-3>
+              <img src="assets/icon/4.png" class="imageSize">
+            </ion-col>
+            <ion-col col-7>
+              <ion-label>Wines</ion-label>                 
+            </ion-col>
+            <ion-col col-2>
+              <ion-icon ios="ios-ionic" md="ios-ionic-outline" class="iconsStyle"></ion-icon>
+            </ion-col> 
+        </ion-row>
+        <ion-row class="liststyles" (click)="navigateToAllList()">  
+            <ion-col col-3>
+              <img src="assets/icon/6.png" class="imageSize">
+            </ion-col>
+            <ion-col col-7>
+              <ion-label>Cocktail</ion-label>                 
+            </ion-col>
+            <ion-col col-2>
+              <ion-icon ios="ios-ionic" md="ios-ionic-outline" class="iconsStyle"></ion-icon>
+            </ion-col> 
+        </ion-row>
+        <ion-row class="liststyles" (click)="navigateToAllList()">  
+            <ion-col col-3>
+              <img src="assets/icon/7.png" class="imageSize">
+            </ion-col>
+            <ion-col col-7>
+              <ion-label>Chinese</ion-label>                 
+            </ion-col>
+            <ion-col col-2>
+              <ion-icon ios="ios-ionic" md="ios-ionic-outline" class="iconsStyle"></ion-icon>
+            </ion-col> 
+        </ion-row>
+        <ion-row class="liststyles" (click)="navigateToAllList()">  
+            <ion-col col-3>
+              <img src="assets/icon/8.png" class="imageSize">
+            </ion-col>
+            <ion-col col-7>
+              <ion-label>Cake</ion-label>                 
+            </ion-col>
+            <ion-col col-2>
+              <ion-icon ios="ios-ionic" md="ios-ionic-outline" class="iconsStyle"></ion-icon>
+            </ion-col> 
+        </ion-row>
+        <ion-row class="liststyles" (click)="navigateToAllList()">  
+            <ion-col col-3>
+              <img src="assets/icon/9.png" class="imageSize">
+            </ion-col>
+            <ion-col col-7>
+              <ion-label>Ice-Cream</ion-label>                 
+            </ion-col>
+            <ion-col col-2>
+              <ion-icon ios="ios-ionic" md="ios-ionic-outline" class="iconsStyle"></ion-icon>
+            </ion-col> 
+        </ion-row>
+        <ion-row class="liststyles" (click)="navigateToAllList()">  
+            <ion-col col-3>
+              <img src="assets/icon/10.png" class="imageSize">
+            </ion-col>
+            <ion-col col-7>
+              <ion-label>Tea</ion-label>                 
+            </ion-col>
+            <ion-col col-2>
+              <ion-icon ios="ios-ionic" md="ios-ionic-outline" class="iconsStyle"></ion-icon>
+            </ion-col> 
+        </ion-row> 
+
+</ion-content>
