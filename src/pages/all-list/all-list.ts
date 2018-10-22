@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular'; 
-import { HotelService } from '../hotel/hotel.service';
+import { NavController, NavParams } from 'ionic-angular';
 import { HotelHomePage } from '../hotel-home/hotel-home';
 import { AppService } from '../../app/app.service';
 

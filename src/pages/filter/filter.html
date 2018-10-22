@@ -31,65 +31,7 @@
       <span class="filterColor">Choose Category</span>
     </ion-col>
   </ion-row><br>
-  <ion-row> 
-    <p *ngFor="let value of selectedValue" class="selectedValStyle">
-      <button outline class="rmvSelectedValbtn" (click)="removeSelectedValue(value)" >{{value}}
-        <ion-icon ios="ios-close" md="ios-close-outline"></ion-icon>
-      </button> 
-    </p> 
-  </ion-row>
- 
-
-  <ion-row>
-    <ion-col col-3>
-      <img src="assets/icon/1.png"  class="filterIcons" (click)="select('restaurants')"><br>  Resto  
-    </ion-col>
-    <ion-col col-3>
-      <img src="assets/icon/2.png"  class="filterIcons" (click)="select('Fish')"><br> Fish
-    </ion-col>
-
-    <ion-col col-3>
-      <img src="assets/icon/3.png"  class="filterIcons" (click)="select('Meat')"><br> Meat
-    </ion-col>
-    <ion-col col-3>
-      <img src="assets/icon/4.png"  class="filterIcons" (click)="select('Wines')"><br> Wines
-    </ion-col>
-  </ion-row>
-  <ion-row> 
-
-    <ion-col col-3>
-      <img src="assets/icon/6.png"  class="filterIcons " (click)="select('Cocktail')"><br> Cocktail
-    </ion-col>
-    <ion-col col-3>
-      <img src="assets/icon/7.png" class="filterIcons " (click)="select('Chinese')"><br> Chinese
-    </ion-col>
-    <ion-col col-3>
-      <img src="assets/icon/8.png"  class="filterIcons " (click)="select('Cake')"><br> Cake
-    </ion-col>
-    <ion-col col-3>
-      <img src="assets/icon/9.png"  class="filterIcons " (click)="select('Ice-Cream')"><br> Ice-Cream
-    </ion-col>
-  </ion-row>
-  <ion-row>
-
-
-    <ion-col col-3>
-      <img src="assets/icon/10.png"  class="filterIcons " (click)="select('Tea')"><br> Tea
-    </ion-col>
-
-
-  </ion-row>
-  <ion-row>
-    <ion-col col-12>
-
-      <ion-item>
-        <i class="fa fa-rupee"></i>
-        <span class="filterColor"> Set a Price Range</span>
-      </ion-item>
-
-    </ion-col>
-  </ion-row>
-  <ion-row>
+     <ion-row>
     <ion-label padding>Price (
       <i class="fa fa-rupee"></i>)</ion-label>
   </ion-row>
@@ -116,6 +58,38 @@
 
     </ion-col>
   </ion-row>
+
+     <ion-row>
+    <ion-label padding>Mess type</ion-label>
+  </ion-row>
+  <ion-row> 
+    <p *ngFor="let value of selectedValue" class="selectedValStyle">
+      <button outline class="rmvSelectedValbtn" (click)="removeSelectedValue(value)" >{{value}}
+        <ion-icon ios="ios-close" md="ios-close-outline"></ion-icon>
+      </button> 
+    </p> 
+  </ion-row>
+  <ion-row>
+    <ion-col col-3>
+      <img src="assets/icon/1.png"  class="filterIcons" (click)="select('Veg')"><br>  Veg  
+    </ion-col>
+    <ion-col col-3>
+      <img src="assets/icon/2.png"  class="filterIcons" (click)="select('Non-Veg')"><br> Non-Veg
+    </ion-col>
+    <ion-col col-3>
+      <img src="assets/icon/2.png"  class="filterIcons" (click)="select('JainFood')"><br> Jain food
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-3>
+      <img src="assets/icon/6.png"  class="filterIcons " (click)="select('Limited')"><br> Limited
+    </ion-col>
+    <ion-col col-3>
+      <img src="assets/icon/7.png" class="filterIcons " (click)="select('Unlimited')"><br> Unlimited
+    </ion-col>
+  </ion-row>
+
+
 
 </ion-content>
 

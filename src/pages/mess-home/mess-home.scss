@@ -13,8 +13,11 @@ page-mess-home {
         border-radius: 100%;
     }
     .hotel-content{ 
-        margin-top: 90% !important;
-        overflow-y: hidden !important;
+        margin-top: 60% !important;
+    overflow-y: hidden !important;
+    z-index: 998;
+    width: 90%;
+    margin: 0 auto;
       }
     .viewProfileTxt{
         float:right;

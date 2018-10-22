@@ -18,10 +18,10 @@ export class AppService{
 		});
 	}
 	showLoading() {
-		this.loading.present();
+		//this.loading.present();
 	};
 	hideLoading(){
-		this.loading.dismiss();
+		//this.loading.dismiss();
 	};
  
 	getUserLogin(data){
@@ -40,6 +40,10 @@ export class AppService{
 		return this.http.get(baseUrl+"hotel_list.php?token=1").map(res => res.json());
 	}
 	
+	getMessList(){
+		return this.http.get(baseUrl+"mess_list.php?token=1").map(res => res.json());
+	}
+	
 	getFoodByCategory(catId){
 		return this.http.get(baseUrl+"food_by_category.php?token=1&cat_id="+catId).map(res => res.json());
 	}
@@ -49,8 +53,13 @@ export class AppService{
 	}
 	
 	getHotelDetails(data){
-	console.log(data);
-		return this.http.get(baseUrl+"hotel_details.php?token=1&hotel_id="+data).map(res => res.json());
+		var dataFrom = "hotel_details"
+		if(data.hotelType == "mess"){
+			dataFrom = "mess_details"
+		}else if(data.hotelType == "hotel"){
+			dataFrom = "hotel_details"
+		}
+		return this.http.get(baseUrl+dataFrom+".php?token=1&hotel_id="+data.hotel_id).map(res => res.json());
 	}
 	
 	foodDetail(data){

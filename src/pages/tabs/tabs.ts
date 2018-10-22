@@ -10,9 +10,9 @@ import { MessPage } from '../mess/mess';
 })
 export class TabsPage {
 
-  tab1Root = HotelPage;
+  tab1Root = MessPage;
   tab2Root = MapPage;
-  tab3Root = MessPage;
+  tab3Root = "";
 
   public showBottomTabs = true;
 

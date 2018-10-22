@@ -172,7 +172,7 @@ export class HotelPage implements OnInit {
 	};
 
 	navigateToHotel(resto_id) {
-		this.navCtrl.push(HotelHomePage, { 'id': resto_id });
+		this.navCtrl.push(HotelHomePage, { 'id': resto_id, 'hotelType':'hotel'});
 	}
 
 

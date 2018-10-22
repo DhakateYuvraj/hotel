@@ -32,12 +32,15 @@ export class HotelHomePage {
   web_url:""
   };
   public hotelId;
+  public hotelType;
   public showBottomTabs = false;
   
 	constructor(public navCtrl: NavController,
     private appService: AppService,
 	public navParams: NavParams ) {
 		this.hotelId = this.navParams.get('id');
+		this.hotelType = this.navParams.get('hotelType');
+		
 		console.log(this.hotelId);
 
 	}
@@ -53,7 +56,7 @@ export class HotelHomePage {
     }
 */
 	getHotelDetails(resto_id){
-		this.appService.getHotelDetails(resto_id).subscribe(data => {
+		this.appService.getHotelDetails({"hotel_id":resto_id,"hotelType":this.hotelType}).subscribe(data => {
 			console.log(JSON.stringify(data));
 			this.hotelData = data[0];
 		});

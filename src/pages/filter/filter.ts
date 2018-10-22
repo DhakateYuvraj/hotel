@@ -86,11 +86,11 @@ export class FilterPage {
   }
 
   applyFilter(){
-    // console.log("Range Value", this.rangeValue);
-    // console.log("Selected Value", this.selectedValue);
-    // console.log("Fron", this.priceFrom, "To", this.priceTo);
+	console.log("Range Value", this.rangeValue);
+	console.log("Selected Value", this.selectedValue);
+	console.log("Fron", this.priceFrom, "To", this.priceTo);
 
-    this.navCtrl.push(AllListPage); 
+    //this.navCtrl.push(AllListPage); 
 
   } 
 
