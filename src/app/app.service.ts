@@ -44,6 +44,10 @@ export class AppService{
 		return this.http.get(baseUrl+"mess_list.php?token=1").map(res => res.json());
 	}
 	
+	getFilteredMessList(){
+		return this.http.get(baseUrl+"filter.php?resto_dish_type=veg&mess_type=limted&min_price=200&max_price=700&distance=30").map(res => res.json());
+	}
+	
 	getFoodByCategory(catId){
 		return this.http.get(baseUrl+"food_by_category.php?token=1&cat_id="+catId).map(res => res.json());
 	}
