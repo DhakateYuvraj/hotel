@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Hotel Home</ion-title>
+    <ion-title>Mess Home</ion-title>
   </ion-navbar>
 
 </ion-header> 
@@ -14,7 +14,7 @@
                                
               <ion-card class="hotel-content">
                   <ion-item class="hotelInitialText"><h1>{{ hotelData.resto_name[0] | uppercase}}</h1></ion-item>
-                  <ion-item> 
+                  <ion-item class="hotDet"> 
                     <ul>
                       <li (click)="navigateToHotelDetail()"><h2><strong>Hotel</strong> : {{hotelData.resto_name}}
                         <strong class="viewProfileTxt">VIEW MENU</strong></h2> 

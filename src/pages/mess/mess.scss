@@ -58,4 +58,49 @@ page-mess {
         position: fixed;
     }
 
+	
+	.card-md{
+		position:relative;
+		box-shadow:none;	
+		.messIcon{
+			position:absolute;
+			top:0px;
+			left:0;
+			height:50px;
+			width:50px;
+			z-index:10;
+			border-radius:50%;
+			border:1px solid #000;
+		}
+		ion-item{
+			margin-top: 25px;
+			border-radius:5px;
+			border: 1px solid #000;
+			.openClose{
+				position:absolute;
+				top:2px;
+				right:5px;
+			}
+			.messName{
+				font-size: 1.3em;
+				position: absolute;
+				top: 5px;
+				left: 70px;
+			}
+			.messInfo{
+				margin-top:20px;
+				.messFees{
+				
+				}
+				.messltd{
+				
+				}
+				.messTodayMenu{
+				
+				}
+			}
+			
+		}
+	}
+	.list-md{margin-bottom:80px;}
 }

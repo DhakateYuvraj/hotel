@@ -20,5 +20,18 @@ page-hotel-home {
         float:right;
         color:blue;
     }  
+	
+	
+	
+	
+	ion-card.hotel-content ion-item.hotDet{
+	width: 96%;
+    margin: 0 auto;
+    border-radius: 10px;
+	}
+	ion-card.hotel-content {
+	width: 90%;
+    margin: 45% auto 80px !important;
+	}
   
 }

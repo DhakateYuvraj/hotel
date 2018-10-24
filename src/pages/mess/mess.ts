@@ -25,7 +25,6 @@ export class MessPage implements OnInit {
   public showSelectedAddrs = false;
   public selectedLocation;
   public searchbar;
-  public displayData; 
   public hotelData;
   public categoriesData;
   public data;
@@ -164,9 +163,19 @@ export class MessPage implements OnInit {
 		});
 	};
 	getHotelList(){
+	let newData = [];
 		this.appService.getMessList().subscribe(data => {
 			//console.log(JSON.stringify(data));
-			this.hotelData = data;
+			let currTime = new Date(new Date().getTime() + 4*60*60*1000).toLocaleTimeString();
+			data.forEach(function(element) {
+				if (element.open_time < currTime || element.close_time > currTime ){
+					element.isMessOpen = !true
+				}else{
+					element.isMessOpen = !false
+				}
+				newData.push(element)
+			});
+			this.hotelData = newData;
 		});
 	};
 
