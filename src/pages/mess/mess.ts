@@ -38,6 +38,7 @@ export class MessPage implements OnInit {
    private tabBarHeight;
    private topOrBottom:string;
    private contentBox;
+   public filter = {rangeValue:0,selectedValue:0,priceFrom:0,priceTo:0}
 
   
   constructor(public navCtrl: NavController,
@@ -51,8 +52,12 @@ export class MessPage implements OnInit {
     public loadingCtrl: LoadingController,
     private geolocation: Geolocation,
     public http: Http
-
   ) {
+	this.filter.rangeValue = navParams.get("rangeValue") ? navParams.get("rangeValue") : 0;
+	this.filter.selectedValue = navParams.get("selectedValue") ? navParams.get("selectedValue") : 0;
+	this.filter.priceFrom = navParams.get("priceFrom") ?  navParams.get("priceFrom") : 0;
+	this.filter.priceTo = navParams.get("priceTo") ?  navParams.get("priceTo") : 0;
+
  
     this.geolocation.getCurrentPosition().then((resp) => {
       var lat = resp.coords.latitude;
@@ -177,6 +182,36 @@ export class MessPage implements OnInit {
 			});
 			this.hotelData = newData;
 		});
+		console.log(this.filter);
+		//http://insideout.org.in/services/filter.php?resto_dish_type=veg&mess_type=limted&min_price=200&max_price=700&distance=30
+	
+	let filterData="";
+	//{rangeValue:0,selectedValue:0,priceFrom:0,priceTo:0}
+	//if(this.filter.priceFrom){
+	//filterData = filterData + "&resto_dish_type=veg";
+	//}
+	if(this.filter.selectedValue && this.filter.selectedValue[0]){
+		filterData = filterData + "&mess_type="+this.filter.selectedValue.toString();
+	}
+	if(this.filter.priceFrom){
+		filterData = filterData + "&min_price="+this.filter.priceFrom;
+	}
+	if(this.filter.priceTo){
+		filterData = filterData + "&max_price="+this.filter.priceTo;
+	}else{
+		if(this.filter.priceFrom){
+			filterData = filterData + "&max_price="+this.filter.priceFrom + 100;
+		}
+	}
+	
+	if(this.filter.selectedValue || this.filter.priceFrom || this.filter.priceTo){
+		this.http.get("http://insideout.org.in/services/filter.php?distance="+this.filter.rangeValue+""+filterData)
+		.map(res => res.json()).subscribe(data => {
+			this.hotelData = data;
+			//alert(JSON.stringify(data))
+		});
+	}
+	
 	};
 
 	navigateToHotel(resto_id) {

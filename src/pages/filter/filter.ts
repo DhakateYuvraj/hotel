@@ -7,6 +7,7 @@ import { AlertController } from 'ionic-angular';
 
 // import { HotelPage } from '../hotel/hotel';
 import { AllListPage } from '../all-list/all-list';
+import { MessPage } from '../mess/mess';
 
 
 @Component({
@@ -88,8 +89,13 @@ export class FilterPage {
   applyFilter(){
 	console.log("Range Value", this.rangeValue);
 	console.log("Selected Value", this.selectedValue);
-	console.log("Fron", this.priceFrom, "To", this.priceTo);
-
+	console.log("From", this.priceFrom, "To", this.priceTo);
+	this.navCtrl.push(MessPage,{
+		rangeValue : this.rangeValue,
+		selectedValue : this.selectedValue,
+		priceFrom : this.priceFrom,
+		priceTo : this.priceTo
+	});  
     //this.navCtrl.push(AllListPage); 
 
   } 

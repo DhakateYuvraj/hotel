@@ -40,31 +40,6 @@
 					</ion-row>
                     </ion-slide>
                   
-                    <ion-slide>
-                        <ion-row>
-  
-                              <ion-col col-3>
-                              <img src="assets/icon/6.png" class="imageSize" (click)="navigateToAllList()">  
-                              <ion-label class="fontStyle">Cocktail</ion-label> 
-                              </ion-col>
-          
-                              <ion-col col-3>
-                              <img src="assets/icon/7.png" class="imageSize" (click)="navigateToAllList()">  
-                              <ion-label class="fontStyle">Chinese</ion-label> 
-                              </ion-col>
-  
-                              <ion-col col-3>
-                                 <img src="assets/icon/8.png" class="imageSize" (click)="navigateToAllList()">  
-                                 <ion-label class="fontStyle">Ice-Cream</ion-label> 
-                              </ion-col>
-                              <ion-col col-3 >
-                                 <img src="assets/icon/9.png" class="imageSize" (click)="navigateToAllList()"> 
-                                 <ion-label class="fontStyle">Cake </ion-label> 
-                              </ion-col>
-      
-                        </ion-row>
-                    </ion-slide>
-                  
                   
                   </ion-slides>
           </ion-col>
@@ -72,13 +47,15 @@
   </ion-header> 
 
 <ion-content paddingclass="cards-bg social-cards" hide-header [header]="head" #contentRef (ionScroll)="scrollingFun($event)">
-    <ion-refresher (ionRefresh)="doRefresh($event)">
+    <!--
+	<ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content  
             refreshingSpinner="crescent"
             refreshingText="Refreshing...">
         </ion-refresher-content>
     </ion-refresher>
-    <ion-list>
+    -->
+	<ion-list>
             <div *ngFor="let data of hotelData"> 
                 <ion-card (click)= "navigateToHotel(data.resto_id)" class="colStyle">
                     <img class="messIcon" src="http://insideout.org.in/{{data.dish_photo}}" /> 

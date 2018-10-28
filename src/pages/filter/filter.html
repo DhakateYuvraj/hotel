@@ -18,10 +18,10 @@
   </ion-label>
   <ion-label class="discoverlbl" *ngIf="rangeValue != 0">
       <ion-icon ios="ios-eye" md="md-eye" style="color:black"></ion-icon>
-        Discover hotels within &nbsp;<span class="valueColor">{{rangeValue}}</span>&nbsp; kms
+        Discover mess within &nbsp;<span class="valueColor">{{rangeValue}}</span>&nbsp; kms
   </ion-label>
-  <ion-range class="ionRange" min="0" max="100" pin="true" [(ngModel)] = "rangeValue" name="rangeValue" (ionChange)="getRangeValue()">
-      <ion-label range-left>0</ion-label>
+  <ion-range class="ionRange" min="1" max="100" pin="true" [(ngModel)] = "rangeValue" name="rangeValue" (ionChange)="getRangeValue()">
+      <ion-label range-left>1</ion-label>
       <ion-label range-right>100</ion-label> 
   </ion-range><hr>
 

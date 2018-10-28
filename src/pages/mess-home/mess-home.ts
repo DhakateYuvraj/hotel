@@ -52,7 +52,7 @@ export class MessHomePage {
     }
   
     navigateToHotelDetail(){
-        this.navCtrl.push(MessDetailPage);
+        this.navCtrl.push(MessDetailPage,);
     }
   
 
