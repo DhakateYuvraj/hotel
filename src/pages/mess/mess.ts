@@ -170,7 +170,6 @@ export class MessPage implements OnInit {
 	getHotelList(){
 	let newData = [];
 		this.appService.getMessList().subscribe(data => {
-			//console.log(JSON.stringify(data));
 			let currTime = new Date(new Date().getTime() + 4*60*60*1000).toLocaleTimeString();
 			data.forEach(function(element) {
 				if (element.open_time < currTime || element.close_time > currTime ){
@@ -211,8 +210,10 @@ export class MessPage implements OnInit {
 			//alert(JSON.stringify(data))
 		});
 	}
+
 	
 	};
+	
 
 	navigateToHotel(resto_id) {
 		this.navCtrl.push(HotelHomePage, { 'id': resto_id, 'hotelType':'mess'});

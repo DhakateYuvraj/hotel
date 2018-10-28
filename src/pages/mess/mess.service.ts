@@ -9,7 +9,7 @@ export class MessService{
 
   }
 
-  public dummyUser={'id':1,"name":"Avi","email":"pramod.shelke@yahoo.com","contactNum":999999};
+  //public dummyUser={'id':1,"name":"Yuvraj","email":"yuvraj.dhakate@gmail.com","contactNum":"8956954151"};
 
   extractData (res: Response){
       return res.json();
@@ -21,7 +21,7 @@ export class MessService{
 
     getLoginUser(){
         // return this.http.get(``).map(this.extractData);
-        return this.dummyUser;
+        //return this.dummyUser;
              // return this.http.post("/api",user);
         
     }
